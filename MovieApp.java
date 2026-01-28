@@ -13,7 +13,7 @@ public class MovieApp {
         );
 
         service.getMovieInfo(1025);
-
+service.top10RatedMovies();
         }
         
    
