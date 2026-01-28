@@ -1,7 +1,7 @@
 import service.MovieService;
 import util.CSVLoader;
 
-import java.util.Scanner;
+
 
 public class MovieApp {
     public static void main(String[] args) throws Exception {
@@ -12,7 +12,7 @@ public class MovieApp {
                 CSVLoader.loadDirectors("data/directors.csv")
         );
 
-        service.getMovieInfo(1056);
+        service.getMovieInfo(1025);
 
         }
         
