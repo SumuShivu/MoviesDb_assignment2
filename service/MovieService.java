@@ -107,4 +107,19 @@ public void top10RatedMovies() {
                                 directors.get(e.getKey()).getName() + " : " + e.getValue()));
     }
 
+     public void actorWithMostMovies() {
+        Map<Integer, Long> count = new HashMap<>();
+
+        for (Movie m : movies.values()) {
+            for (int a : m.getActorIds()) {
+                count.put(a, count.getOrDefault(a, 0L) + 1);
+            }
+        }
+
+        count.entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .ifPresent(e ->
+                        System.out.println(
+                                actors.get(e.getKey()).getName() + " : " + e.getValue()));
+    }
 }
