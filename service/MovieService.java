@@ -73,4 +73,10 @@ public void top10RatedMovies() {
                 .filter(m -> m.getGenre().equalsIgnoreCase(genre))
                 .forEach(System.out::println);
     }
+
+      public void moviesByYear(int year) {
+        movies.values().stream()
+                .filter(m -> m.getReleaseYear() == year)
+                .forEach(System.out::println);
+    }
 }

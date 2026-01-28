@@ -18,6 +18,8 @@ System.out.println("Movies by Director Tony Moreno:");
 service.moviesByDirector("Tony Moreno");
 System.out.println("Movies in Genre Action:");
 service.moviesByGenre("Action");
+System.out.println("Movies released in Year 2020:");
+service.moviesByYear(2020);
         }
         
    
