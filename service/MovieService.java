@@ -84,4 +84,11 @@ public void top10RatedMovies() {
         movies.remove(movieId);
         System.out.println("Movie deleted");
     }
+
+    public void sortByReleaseYear() {
+        movies.values().stream()
+                .sorted(Comparator.comparingInt(Movie::getReleaseYear))
+                .limit(15)
+                .forEach(System.out::println);
+    }
 }

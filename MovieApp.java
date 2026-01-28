@@ -24,6 +24,7 @@ service.moviesByYear(2020);
 service.deleteMovie(1);
 service.getMovieInfo(1);
         
+service.sortByReleaseYear();
 }
     }
 
