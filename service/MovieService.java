@@ -4,6 +4,7 @@ import model.*;
 
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class MovieService {
@@ -91,4 +92,19 @@ public void top10RatedMovies() {
                 .limit(15)
                 .forEach(System.out::println);
     }
+
+    public void top5Directors() {
+        Map<Integer, Long> count =
+                movies.values().stream()
+                        .collect(Collectors.groupingBy(
+                                Movie::getDirectorId, Collectors.counting()));
+
+                                 count.entrySet().stream()
+                .sorted(Map.Entry.<Integer, Long>comparingByValue().reversed())
+                .limit(5)
+                .forEach(e ->
+                        System.out.println(
+                                directors.get(e.getKey()).getName() + " : " + e.getValue()));
+    }
+
 }

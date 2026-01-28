@@ -25,6 +25,8 @@ service.deleteMovie(1);
 service.getMovieInfo(1);
         
 service.sortByReleaseYear();
+
+service.top5Directors();
 }
     }
 
