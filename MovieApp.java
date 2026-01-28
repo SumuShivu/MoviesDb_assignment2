@@ -36,6 +36,9 @@ service.top5Directors();
 
 System.out.println("The actor with most movies is:");
 service.actorWithMostMovies();
+
+        System.out.println("Youngest Actor's Movies:");
+        service.youngestActorMovies();
 }
     }
 

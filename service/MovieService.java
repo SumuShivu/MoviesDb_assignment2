@@ -2,7 +2,7 @@ package service;
 
 import model.*;
 
-
+import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -121,5 +121,22 @@ public void top10RatedMovies() {
                 .ifPresent(e ->
                         System.out.println(
                                 actors.get(e.getKey()).getName() + " : " + e.getValue()));
+    }
+
+     public void youngestActorMovies() {
+        LocalDate ref = LocalDate.of(2025, 2, 10);
+
+        Actor youngest = actors.values().stream()
+                .max(Comparator.comparing(Actor::getDob))
+                .orElse(null);
+
+        if (youngest == null) return;
+
+        System.out.println("Youngest Actor: " + youngest.getName());
+        System.out.println("Age: " + youngest.getAge(ref));
+
+        movies.values().stream()
+                .filter(m -> m.getActorIds().contains(youngest.getActorId()))
+                .forEach(System.out::println);
     }
 }
