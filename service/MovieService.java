@@ -35,4 +35,17 @@ public void getMovieInfo(int input) {
         System.out.println(" - " + actors.get(id).getName());
     }
 }
+
+public void top10RatedMovies() {
+        movies.values().stream()
+                .sorted(Comparator.comparingDouble(Movie::getRating).reversed())
+                .limit(10)
+                .forEach(System.out::println);
+    }
+
+    public void moviesByGenre(String genre) {
+        movies.values().stream()
+                .filter(m -> m.getGenre().equalsIgnoreCase(genre))
+                .forEach(System.out::println);
+    }
 }
