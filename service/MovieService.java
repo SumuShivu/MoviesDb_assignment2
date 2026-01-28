@@ -43,4 +43,29 @@ public void top10RatedMovies() {
                 .forEach(System.out::println);
     }
 
+    public void moviesByDirector(String name) {
+    Optional<Director> directorOpt = directors.values().stream()
+            .filter(d -> d.getName().trim().equalsIgnoreCase(name.trim()))
+            .findFirst();
+
+    if (directorOpt.isEmpty()) {
+        System.out.println("Director not found");
+        return;
+    }
+
+    Director d = directorOpt.get();
+
+    boolean found = false;
+    for (Movie m : movies.values()) {
+        if (m.getDirectorId() == d.getDirectorId()) {
+            System.out.println(m);
+            found = true;
+        }
+    }
+
+    if (!found) {
+        System.out.println("No movies found for this director");
+    }
+}
+
 }
