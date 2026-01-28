@@ -16,6 +16,8 @@ public class MovieApp {
 service.top10RatedMovies();
 System.out.println("Movies by Director Tony Moreno:");
 service.moviesByDirector("Tony Moreno");
+System.out.println("Movies in Genre Action:");
+service.moviesByGenre("Action");
         }
         
    

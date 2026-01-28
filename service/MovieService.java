@@ -68,4 +68,9 @@ public void top10RatedMovies() {
     }
 }
 
+  public void moviesByGenre(String genre) {
+        movies.values().stream()
+                .filter(m -> m.getGenre().equalsIgnoreCase(genre))
+                .forEach(System.out::println);
+    }
 }
