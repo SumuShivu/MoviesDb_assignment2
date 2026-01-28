@@ -79,4 +79,9 @@ public void top10RatedMovies() {
                 .filter(m -> m.getReleaseYear() == year)
                 .forEach(System.out::println);
     }
+
+      public void deleteMovie(int movieId) {
+        movies.remove(movieId);
+        System.out.println("Movie deleted");
+    }
 }

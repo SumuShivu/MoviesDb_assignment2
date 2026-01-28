@@ -20,8 +20,10 @@ System.out.println("Movies in Genre Action:");
 service.moviesByGenre("Action");
 System.out.println("Movies released in Year 2020:");
 service.moviesByYear(2020);
-        }
+       
+service.deleteMovie(1);
+service.getMovieInfo(1);
         
-   
+}
     }
 
